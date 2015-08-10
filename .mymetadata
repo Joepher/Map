@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Map"
+  id="myeclipse.1432111058248"
+  context-root="/Map"
+  j2ee-spec="5.0"
+  archive="Map.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
