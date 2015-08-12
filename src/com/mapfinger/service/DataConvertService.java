@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.apache.logging.log4j.Logger;
 import com.mapfinger.entity.UserData;
-import com.mapfinger.log.ConsoleLog;
+import com.mapfinger.log.FileLogger;
 import com.mapfinger.task.DataConvertTask;
 
 public class DataConvertService implements DataService {
@@ -14,6 +15,7 @@ public class DataConvertService implements DataService {
 	private List<UserData> dataQueue;
 	private ExecutorService pool;
 	private boolean noStopRequest;
+	private Logger logger;
 	
 	private static DataConvertService service;
 	
@@ -31,8 +33,24 @@ public class DataConvertService implements DataService {
 	public boolean fire(UserData userData) {
 		boolean response = false;
 		
+		logger.info("Handle new data: " + userData.toString());
+		
 		synchronized (lock) {
 			dataQueue.add(userData);
+			lock.notifyAll();
+		}
+		
+		response = true;
+		
+		return response;
+	}
+	
+	@Override
+	public boolean fire(List<UserData> list) {
+		boolean response = false;
+		
+		synchronized (lock) {
+			dataQueue.addAll(list);
 			lock.notifyAll();
 		}
 		
@@ -47,6 +65,10 @@ public class DataConvertService implements DataService {
 	}
 	
 	private DataConvertService() {
+		this.logger = FileLogger.getLogger();
+		
+		logger.info("Initialization DataConvertService");
+		
 		this.lock = new Object();
 		this.noStopRequest = true;
 		this.pool = Executors.newFixedThreadPool(5);
@@ -59,12 +81,20 @@ public class DataConvertService implements DataService {
 			}
 		};
 		
-		this.internalThread = new Thread(target, "DataConvertServiceInternalThread");
+		this.internalThread = new Thread(target, "DataConvertService-internalThread");
 		this.internalThread.start();
 	}
 	
 	private void runWork() {
+		logger.info("Start inner thread");
+		
+		boolean suspend = false;
+		
 		while (noStopRequest) {
+			if (!suspend) {
+				logger.info("On running...");
+			}
+			
 			UserData userData = null;
 			
 			synchronized (lock) {
@@ -73,13 +103,22 @@ public class DataConvertService implements DataService {
 				} else {
 					try {
 						lock.wait(WAIT_TIME_OUT);
+						
+						if (!suspend) {
+							logger.info("No data need to handle");
+							suspend = true;
+						}
 					} catch (InterruptedException e) {
-						ConsoleLog.log("DataConvertService interrupted while waiting for lock");
+						logger.warn("DataConvertService interrupted while waiting for lock");
 					}
 				}
 			}
 			
-			pool.execute(new DataConvertTask(userData));
+			if (userData != null) {
+				suspend = false;
+				logger.info("Convert to bd09ll: " + userData.toString());
+				pool.execute(new DataConvertTask(userData));
+			}
 		}
 	}
 	

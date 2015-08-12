@@ -12,13 +12,13 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import com.mapfinger.entity.Coord;
-import com.mapfinger.log.ConsoleLog;
+import com.mapfinger.log.ConsoleLogger;
 
 public class ConvertToJsonDataExecutor {
 	
 	public static JSONArray execute(List<Coord> coords) {
 		if (coords == null || coords.size() == 0) {
-			ConsoleLog.log("no data to show");
+			ConsoleLogger.log("no data to show");
 			return null;
 		}
 		
@@ -27,7 +27,7 @@ public class ConvertToJsonDataExecutor {
 			array.put(new JSONObject(coords.get(i)));
 		}
 		
-		ConsoleLog.log("combinate " + coords.size() + " point to jsonarray");
+		ConsoleLogger.log("combinate " + coords.size() + " point to jsonarray");
 		return array;
 	}
 	

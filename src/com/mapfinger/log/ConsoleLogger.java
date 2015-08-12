@@ -3,9 +3,9 @@ package com.mapfinger.log;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class ConsoleLog {
+public class ConsoleLogger {
 	public static void log(String msg) {
-		System.out.println("[" + getTime() + "] " + Thread.currentThread().getId() + ": " + msg);
+		System.out.println("[" + getTime() + "] " + Thread.currentThread().getName() + " - " + msg);
 	}
 	
 	private static String getTime() {

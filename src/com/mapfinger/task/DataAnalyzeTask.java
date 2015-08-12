@@ -11,6 +11,8 @@ public class DataAnalyzeTask extends Task {
 	
 	@Override
 	public void run() {
+		logger.info("Execute new DataAnalyzeTask: " + this.userData.toString());
+		
 		KeyPointClusterExecutor executor = new KeyPointClusterExecutor(userData);
 		boolean response = executor.execute();
 		

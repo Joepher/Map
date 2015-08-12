@@ -12,6 +12,8 @@ public class DataConvertTask extends Task {
 	
 	@Override
 	public void run() {
+		logger.info("Execute new DataConvertTask: " + this.userData.toString());
+		
 		ConvertToBDLocationExecutor executor = new ConvertToBDLocationExecutor(userData);
 		boolean response = executor.execute();
 		

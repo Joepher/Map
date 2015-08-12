@@ -4,13 +4,18 @@
  * @name KeyPointDetectionExecutor
  * @version 1.0
  * @description The core function is detecting keypoints from the oroginal locations.
- *              In keyPointDetection, algorithm that proposed by MSRA is used to detect key points. Theory that a
- *              geographic region where a user stayed over a certain time interval is considered in this algorithm.
- *              Certain amount of points will be regarded as key points by this theory. Thus may cause stituations as
+ *              In keyPointDetection, algorithm that proposed by MSRA is used to detect key points. Theory
+ *              that a
+ *              geographic region where a user stayed over a certain time interval is considered in this
+ *              algorithm.
+ *              Certain amount of points will be regarded as key points by this theory. Thus may cause
+ *              stituations as
  *              followed:
- *              key point that consist only one location will be expanded by server amount of locations; key point that
+ *              key point that consist only one location will be expanded by server amount of locations; key
+ *              point that
  *              consist amounts of locations will be partition to two key points.
- *              To solve the problem caused by that algorithm, an enhanced algorithm is proposed. Key points consist of
+ *              To solve the problem caused by that algorithm, an enhanced algorithm is proposed. Key points
+ *              consist of
  *              Stay points and Interest points. Two rules are used to detect those points.
  */
 package com.mapfinger.executor;
@@ -22,7 +27,6 @@ import com.mapfinger.entity.KeyPoint;
 import com.mapfinger.entity.Location;
 import com.mapfinger.entity.UserData;
 import com.mapfinger.io.FileOperator;
-import com.mapfinger.log.ConsoleLog;
 
 public class KeyPointDetectionExecutor extends BaseExecutor {
 	private String convDataPath;
@@ -30,6 +34,8 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 	private String keyenhDataPath;
 	private Thread keyThread;
 	private Thread enhKeyThread;
+	private boolean keyFinish;
+	private boolean enhkeyFinish;
 	private List<Location> locations;
 	
 	private static double distThreshold = 100; // meter
@@ -45,6 +51,8 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 		this.convDataPath = home + "bd09ll/" + userData.getFileName();
 		this.keyDataPath = home + "key/" + userData.getFileName();
 		this.keyenhDataPath = home + "keyenh/" + userData.getFileName();
+		this.keyFinish = false;
+		this.enhkeyFinish = false;
 		this.locations = null;
 		
 		Runnable keyTarget = new Runnable() {
@@ -67,9 +75,17 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 	
 	@Override
 	public boolean execute() {
-		this.locations = LocationDataExtractExecutor.extractConvLocationData(convDataPath);
+		this.locations = new LocationDataExtractExecutor(null).extractConvLocationData(convDataPath);
 		this.keyThread.start();
 		this.enhKeyThread.start();
+		
+		while (!keyFinish || !enhkeyFinish) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		return true;
 	}
@@ -78,16 +94,20 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 		List<KeyPoint> keyPoints = keyPointDetection(locations);
 		
 		if (persistance(keyPoints, keyDataPath)) {
-			ConsoleLog.log("Successed to persistance key points to " + keyDataPath);
+			logger.info("Successed to persistance key points to " + keyDataPath);
 		}
+		
+		keyFinish = true;
 	}
 	
 	private void runEnhKeyWork() {
 		List<KeyPoint> enhKeyPoints = enhancedKeyPointDetection(locations);
 		
 		if (persistance(enhKeyPoints, keyenhDataPath)) {
-			ConsoleLog.log("Successed to persistance enhanced key points to " + keyenhDataPath);
+			logger.info("Successed to persistance enhanced key points to " + keyenhDataPath);
 		}
+		
+		enhkeyFinish = true;
 	}
 	
 	private List<KeyPoint> keyPointDetection(List<Location> locations) {
@@ -119,7 +139,7 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 				}
 			}
 			
-			ConsoleLog.log("Detected " + keyPoints.size() + " key points");
+			logger.info("Detected " + keyPoints.size() + " key points");
 		}
 		
 		return keyPoints;
@@ -137,7 +157,7 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 			keyPoints.addAll(stayPoints);
 			keyPoints.addAll(interestPoints);
 			
-			ConsoleLog.log("Detected " + keyPoints.size() + " key points (enhanced)");
+			logger.info("Detected " + keyPoints.size() + " key points (enhanced)");
 		}
 		
 		return keyPoints;
@@ -165,7 +185,7 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 				response = true;
 			} catch (Exception e) {
 				response = false;
-				ConsoleLog.log("Failed to persistance " + filePath + ".Err:" + e.getMessage());
+				logger.error("Failed to persistance " + filePath + ".Err:" + e.getMessage());
 			}
 			response = true;
 		}
@@ -186,8 +206,8 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 			
 			timeDiff = getTimeDiff(preloc, curloc);
 			if (timeDiff >= timeThreshold) {
-				keyPoints.add(new KeyPoint(preloc.getLongitude(), preloc.getLatitude(), preloc
-						.getTimeline(), curloc.getTimeline(), ""));
+				keyPoints.add(new KeyPoint(preloc.getLongitude(), preloc.getLatitude(), preloc.getTimeline(),
+						curloc.getTimeline(), preloc.getAddress()));
 			}
 			
 			preloc = curloc;
@@ -297,6 +317,7 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 		meanCoord.setLatitude(latSum / (endPos - beginPos + 1) + "");
 		meanCoord.setArriveTime(locations.get(beginPos).getTimeline());
 		meanCoord.setLeaveTime(locations.get(endPos).getTimeline());
+		meanCoord.setAddress("UNHANDLE");
 		
 		return meanCoord;
 	}
@@ -306,8 +327,8 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 		
 		if (!curLoc.getLongitude().equals(preLoc.getLongitude())) {
 			slope = (Double.parseDouble(curLoc.getLatitude()) - Double.parseDouble(preLoc.getLatitude()))
-					/ (Double.parseDouble(curLoc.getLongitude()) - Double.parseDouble(preLoc
-							.getLongitude())) * 1.0;
+					/ (Double.parseDouble(curLoc.getLongitude()) - Double.parseDouble(preLoc.getLongitude()))
+					* 1.0;
 		}
 		
 		return slope;
@@ -333,6 +354,7 @@ public class KeyPointDetectionExecutor extends BaseExecutor {
 			meanCoord.setLongitude(lonSum + "");
 			meanCoord.setArriveTime(interests.get(0).getTimeline());
 			meanCoord.setLeaveTime(interests.get(interests.size() - 1).getTimeline());
+			meanCoord.setAddress("UNHANDLE");
 		} else {
 			meanCoord = null;
 		}

@@ -11,6 +11,8 @@ public class DataParseTask extends Task {
 	
 	@Override
 	public void run() {
+		logger.info("Execute new DataParseTask: " + this.userData.toString());
+		
 		KeyPointDetectionExecutor executor = new KeyPointDetectionExecutor(userData);
 		boolean response = executor.execute();
 		

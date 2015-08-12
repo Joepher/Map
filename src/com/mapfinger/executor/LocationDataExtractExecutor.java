@@ -13,11 +13,22 @@ import java.util.List;
 import com.mapfinger.entity.Coord;
 import com.mapfinger.entity.KeyPoint;
 import com.mapfinger.entity.Location;
+import com.mapfinger.entity.UserData;
 import com.mapfinger.io.FileOperator;
-import com.mapfinger.log.ConsoleLog;
 
-public class LocationDataExtractExecutor {
-	public static List<Location> extractOrigLocationData(String origDataPath) {
+public class LocationDataExtractExecutor extends BaseExecutor {
+	
+	public LocationDataExtractExecutor(UserData userData) {
+		super(userData);
+	}
+	
+	@Override
+	public boolean execute() {
+		// Auto-generated method stub
+		return false;
+	}
+	
+	public List<Location> extractOrigLocationData(String origDataPath) {
 		String read;
 		String[] data;
 		List<Location> locations = new ArrayList<Location>();
@@ -34,25 +45,25 @@ public class LocationDataExtractExecutor {
 						String longitude = data[1];
 						String timeLine = data[5] + " " + data[6];
 						
-						locations.add(new Location(timeLine, longitude, latitude, ""));
+						locations.add(new Location(timeLine, longitude, latitude, "MISS"));
 					}
 				}
+				reader.close();
 				
-				ConsoleLog.log("Extract " + locations.size() + " points from " + origDataPath);
+				logger.info("Extract " + locations.size() + " points from " + origDataPath);
 			} catch (Exception e) {
 				locations = null;
-				ConsoleLog.log("Failed to extract points from " + origDataPath + ".Err: "
-						+ e.getMessage());
+				logger.error("Failed to extract points from " + origDataPath + ".\nErr: " + e.getMessage());
 			}
 		} else {
 			locations = null;
-			ConsoleLog.log("Failed to extract points from " + origDataPath + ".Err: File not exist");
+			logger.error("Failed to extract points from " + origDataPath + ". Err: File not exist");
 		}
 		
 		return locations;
 	}
 	
-	public static List<Location> extractConvLocationData(String convDataPath) {
+	public List<Location> extractConvLocationData(String convDataPath) {
 		String read;
 		String[] data;
 		List<Location> locations = new ArrayList<Location>();
@@ -71,22 +82,22 @@ public class LocationDataExtractExecutor {
 					
 					locations.add(new Location(timeline, longitude, latitude, address));
 				}
+				reader.close();
 				
-				ConsoleLog.log("Extract " + locations.size() + " points from " + convDataPath);
+				logger.info("Extract " + locations.size() + " points from " + convDataPath);
 			} catch (Exception e) {
 				locations = null;
-				ConsoleLog.log("Failed to extract points from " + convDataPath + ".Err: "
-						+ e.getMessage());
+				logger.error("Failed to extract points from " + convDataPath + ".\nErr: " + e.getMessage());
 			}
 		} else {
 			locations = null;
-			ConsoleLog.log("Failed to extract points from " + convDataPath + ".Err: File not exist");
+			logger.error("Failed to extract points from " + convDataPath + ". Err: File not exist");
 		}
 		
 		return locations;
 	}
 	
-	public static List<KeyPoint> extractKeyPoint(String dataPath) {
+	public List<KeyPoint> extractKeyPoint(String dataPath) {
 		String read;
 		String[] data;
 		List<KeyPoint> keyPoints = new ArrayList<KeyPoint>();
@@ -106,22 +117,22 @@ public class LocationDataExtractExecutor {
 					
 					keyPoints.add(new KeyPoint(longitude, latitude, arriveTime, leaveTime, address));
 				}
+				reader.close();
 				
-				ConsoleLog.log("Extract " + keyPoints.size() + " keyPoints from " + dataPath);
+				logger.info("Extract " + keyPoints.size() + " keyPoints from " + dataPath);
 			} catch (Exception e) {
 				keyPoints = null;
-				ConsoleLog.log("Failed to extract keyPoints from " + dataPath + ".Err: "
-						+ e.getMessage());
+				logger.error("Failed to extract keyPoints from " + dataPath + ".\n Err: " + e.getMessage());
 			}
 		} else {
 			keyPoints = null;
-			ConsoleLog.log("Failed to extract keyPoints from " + dataPath + ".Err: File not exist");
+			logger.error("Failed to extract keyPoints from " + dataPath + ". Err: File not exist");
 		}
 		
 		return keyPoints;
 	}
 	
-	public static List<Coord> extractKeyPointsCoord(String username) {
+	public List<Coord> extractKeyPointsCoord(String username) {
 		List<Coord> coords = new ArrayList<Coord>();
 		// TODO 加载驻留点并提取经纬信息 [nr]
 		

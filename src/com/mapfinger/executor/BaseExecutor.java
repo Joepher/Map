@@ -1,9 +1,15 @@
 package com.mapfinger.executor;
 
+import org.apache.logging.log4j.Logger;
 import com.mapfinger.entity.UserData;
+import com.mapfinger.log.FileLogger;
 
 public abstract class BaseExecutor {
-	public BaseExecutor(UserData userData) {}
+	protected Logger logger;
+	
+	public BaseExecutor(UserData userData) {
+		this.logger = FileLogger.getLogger();
+	}
 	
 	public abstract boolean execute();
 }

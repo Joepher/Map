@@ -3,8 +3,10 @@
  * @date 2015-6-8
  * @name ConvertToCoordExecutor
  * @version 1.0
- * @description Converting the processed locations to coords. Coord is the only position type that can be shown on map.
- *              Whatever kind of positions(keypoint or location) is, they shall extends Coord.The longitude and latitude
+ * @description Converting the processed locations to coords. Coord is the only position type that can be
+ *              shown on map.
+ *              Whatever kind of positions(keypoint or location) is, they shall extends Coord.The longitude
+ *              and latitude
  *              will be extracted.
  */
 package com.mapfinger.executor;
@@ -14,7 +16,7 @@ import com.mapfinger.entity.KeyPoint;
 import com.mapfinger.entity.Coord;
 import com.mapfinger.entity.Location;
 import com.mapfinger.entity.UserData;
-import com.mapfinger.log.ConsoleLog;
+import com.mapfinger.log.ConsoleLogger;
 
 public class ConvertToCoordExecutor extends BaseExecutor {
 	
@@ -41,11 +43,11 @@ public class ConvertToCoordExecutor extends BaseExecutor {
 				coords = convertKeyPointToCoord(objects);
 			} else {
 				coords = null;
-				ConsoleLog.log("convert error: cannot convert " + obj.getClass().getName());
+				ConsoleLogger.log("convert error: cannot convert " + obj.getClass().getName());
 			}
 		} else {
 			coords = null;
-			ConsoleLog.log("no data to convert");
+			ConsoleLogger.log("no data to convert");
 		}
 		
 		return coords;
@@ -60,7 +62,7 @@ public class ConvertToCoordExecutor extends BaseExecutor {
 			coords.add(new Coord(location.getLongitude(), location.getLatitude()));
 		}
 		
-		ConsoleLog.log("converted " + coords.size() + " point");
+		ConsoleLogger.log("converted " + coords.size() + " point");
 		
 		return coords;
 	}
@@ -74,7 +76,7 @@ public class ConvertToCoordExecutor extends BaseExecutor {
 			coords.add(new Coord(keyPoint.getLongitude(), keyPoint.getLatitude()));
 		}
 		
-		ConsoleLog.log("converted " + coords.size() + " point");
+		ConsoleLogger.log("converted " + coords.size() + " point");
 		
 		return coords;
 	}

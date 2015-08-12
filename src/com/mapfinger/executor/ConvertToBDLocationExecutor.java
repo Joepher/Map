@@ -4,7 +4,8 @@
  * @name ConvertToBDLocationExecutor
  * @version 1.0
  * @description The core function is converting the WGS locations to baidu bd09ll locations.
- *              Given a set of locations, by sending spicified number(default 10) locations(unconverted) to baidu
+ *              Given a set of locations, by sending spicified number(default 10) locations(unconverted) to
+ *              baidu
  *              server, same number(as sended) locations(converted) will received from the server.
  */
 package com.mapfinger.executor;
@@ -17,7 +18,6 @@ import com.mapfinger.entity.Coord;
 import com.mapfinger.entity.Location;
 import com.mapfinger.entity.UserData;
 import com.mapfinger.io.FileOperator;
-import com.mapfinger.log.ConsoleLog;
 
 public class ConvertToBDLocationExecutor extends BaseExecutor {
 	private String origDataPath;
@@ -35,18 +35,18 @@ public class ConvertToBDLocationExecutor extends BaseExecutor {
 		String home = FileOperator.getUserHome(userData.getUserName());
 		
 		this.origDataPath = home + "wgs84/" + userData.getFileName();
-		this.convDataPath = home + "b909ll/" + userData.getFileName();
+		this.convDataPath = home + "bd09ll/" + userData.getFileName();
 	}
 	
 	@Override
 	public boolean execute() {
 		boolean response = false;
 		
-		List<Location> origLocations = LocationDataExtractExecutor.extractOrigLocationData(origDataPath);
+		List<Location> origLocations = new LocationDataExtractExecutor(null).extractOrigLocationData(origDataPath);
 		List<Location> convLocations = convert(origLocations);
 		
 		if (persistance(convLocations)) {
-			ConsoleLog.log("Successed to persistance converted points to " + convDataPath);
+			logger.info("Successed to persistance converted points to " + convDataPath);
 			
 			response = true;
 		}
@@ -58,7 +58,7 @@ public class ConvertToBDLocationExecutor extends BaseExecutor {
 		List<Location> convLocations = null;
 		
 		if (origLocations != null) {
-			ConsoleLog.log("Converting " + origLocations.size() + " points to bd09ll");
+			logger.info("Converting " + origLocations.size() + " points to bd09ll");
 			
 			int pos = 0, diff = 10, total = origLocations.size();
 			convLocations = new ArrayList<Location>(total);
@@ -72,7 +72,7 @@ public class ConvertToBDLocationExecutor extends BaseExecutor {
 				pos += diff;
 			}
 		} else {
-			ConsoleLog.log("No points need to be converted to bd09ll");
+			logger.warn("No points need to be converted to bd09ll");
 		}
 		
 		return convLocations;
@@ -82,6 +82,8 @@ public class ConvertToBDLocationExecutor extends BaseExecutor {
 		boolean response;
 		
 		if (convLocations != null) {
+			logger.info("Persistancing " + convLocations.size() + " points to " + convDataPath);
+			
 			try {
 				OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(convDataPath));
 				
@@ -96,7 +98,7 @@ public class ConvertToBDLocationExecutor extends BaseExecutor {
 				response = true;
 			} catch (Exception e) {
 				response = false;
-				ConsoleLog.log("Failed to persistance " + convDataPath + ".Err:" + e.getMessage());
+				logger.error("Failed to persistance " + convDataPath + ".Err:" + e.getMessage());
 			}
 		} else {
 			response = false;
@@ -144,7 +146,7 @@ public class ConvertToBDLocationExecutor extends BaseExecutor {
 				out.write(read);
 			}
 		} catch (Exception e) {
-			ConsoleLog.log("An exception occured while sending coords to baidu. Err:" + e.getMessage());
+			logger.error("An exception occured while sending coords to baidu. Err:" + e.getMessage());
 		}
 		
 		return out.toString();

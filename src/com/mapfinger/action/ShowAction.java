@@ -49,7 +49,7 @@ public class ShowAction {
 		String result = "";
 		
 		if (loginValidate()) {
-			List<Coord> coords = LocationDataExtractExecutor.extractKeyPointsCoord(username);
+			List<Coord> coords = new LocationDataExtractExecutor(null).extractKeyPointsCoord(username);
 			setArray(ConvertToJsonDataExecutor.execute(coords));
 			
 			result = SUCCESS;

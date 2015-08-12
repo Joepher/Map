@@ -5,7 +5,6 @@ import java.util.*;
 import com.mapfinger.entity.KeyPoint;
 import com.mapfinger.entity.UserData;
 import com.mapfinger.io.FileOperator;
-import com.mapfinger.log.ConsoleLog;
 
 public class KeyPointClusterExecutor extends BaseExecutor {
 	private String keyDataPath;
@@ -49,8 +48,8 @@ public class KeyPointClusterExecutor extends BaseExecutor {
 	
 	@Override
 	public boolean execute() {
-		this.keyPoints = LocationDataExtractExecutor.extractKeyPoint(keyDataPath);
-		this.enhKeyPoints = LocationDataExtractExecutor.extractKeyPoint(keyenhDataPath);
+		this.keyPoints = new LocationDataExtractExecutor(null).extractKeyPoint(keyDataPath);
+		this.enhKeyPoints = new LocationDataExtractExecutor(null).extractKeyPoint(keyenhDataPath);
 		this.keyThread.start();
 		this.enhKeyThread.start();
 		
@@ -61,7 +60,7 @@ public class KeyPointClusterExecutor extends BaseExecutor {
 		List<KeyPoint> points = keyPointCluster(keyPoints);
 		
 		if (persistance(points, keyCluPath)) {
-			ConsoleLog.log("Successed to persistance key points to " + keyCluPath);
+			logger.info("Successed to persistance key points to " + keyCluPath);
 		}
 	}
 	
@@ -69,7 +68,7 @@ public class KeyPointClusterExecutor extends BaseExecutor {
 		List<KeyPoint> points = keyPointCluster(enhKeyPoints);
 		
 		if (persistance(points, keyenhCluPath)) {
-			ConsoleLog.log("Successed to persistance key points to " + keyenhCluPath);
+			logger.info("Successed to persistance key points to " + keyenhCluPath);
 		}
 	}
 	
@@ -100,7 +99,7 @@ public class KeyPointClusterExecutor extends BaseExecutor {
 				response = true;
 			} catch (Exception e) {
 				response = false;
-				ConsoleLog.log("Failed to persistance " + filePath + ".Err: " + e.getMessage());
+				logger.error("Failed to persistance " + filePath + ".Err: " + e.getMessage());
 			}
 			response = true;
 		}
