@@ -1,7 +1,7 @@
 package com.mapfinger.task;
 
 import com.mapfinger.entity.UserData;
-import com.mapfinger.executor.KeyPointClusterExecutor;
+import com.mapfinger.executor.keypoint.KeyPointClusterExecutor;
 
 public class DataAnalyzeTask extends Task {
 	
@@ -17,7 +17,10 @@ public class DataAnalyzeTask extends Task {
 		boolean response = executor.execute();
 		
 		if (response) {
-			// TODO 对已聚类处理的驻留点进行规则提取
+			// XXX 对已聚类处理的驻留点进行规则提取[可能不需要]
+			/**
+			 * 进行规则提取，构建Sequentiality-待完成
+			 */
 		}
 	}
 	

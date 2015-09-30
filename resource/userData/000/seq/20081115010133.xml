@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Sequentiality>
+  <KeyPoint longitude="116.33721637026" latitude="40.006927542522" arriveTime="2008-11-15 01:09:08" leaveTime="2008-11-15 03:26:05" address="MISS">
+    <Path longitude="116.33734964767078" latitude="40.00709362337092"/>
+    <Path longitude="116.337457083206" latitude="40.007518863963796"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.337652963" latitude="40.00751239441" arriveTime="2008-11-15 03:27:40" leaveTime="2008-11-15 03:30:45" address="MISS">
+    <Path longitude="116.33574761215307" latitude="40.015178476980694"/>
+    <Path longitude="116.33403346758152" latitude="40.01549884396823"/>
+    <Path longitude="116.33376388338615" latitude="40.01624220857393"/>
+    <Path longitude="116.33354238042385" latitude="40.01635187772315"/>
+    <Path longitude="116.33354703876923" latitude="40.016509633898224"/>
+    <Path longitude="116.33357615330665" latitude="40.01692208089833"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33387112678" latitude="40.016878270072" arriveTime="2008-11-15 03:36:37" leaveTime="2008-11-15 04:00:05" address="MISS">
+    <Path longitude="116.33497575784334" latitude="40.01724937527184"/>
+    <Path longitude="116.33457152598929" latitude="40.016679134380716"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.3344951072" latitude="40.016399533742" arriveTime="2008-11-15 04:02:20" leaveTime="2008-11-15 04:04:15" address="MISS"/>
+  <KeyPoint longitude="116.3332327759625" latitude="40.0146215078265" arriveTime="2008-11-15 01:02:28" leaveTime="2008-11-15 01:02:53" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33394956204751" latitude="40.01311392677975" arriveTime="2008-11-15 01:03:28" leaveTime="2008-11-15 01:03:53" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33421363696002" latitude="40.009913035409" arriveTime="2008-11-15 01:05:33" leaveTime="2008-11-15 01:05:58" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33578913345251" latitude="40.00714034345775" arriveTime="2008-11-15 01:07:48" leaveTime="2008-11-15 01:08:13" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33720143867167" latitude="40.0102059295495" arriveTime="2008-11-15 03:27:05" leaveTime="2008-11-15 03:30:50" address="UNHANDLE"/>
+  <KeyPoint longitude="116.335716704115" latitude="40.0150722760165" arriveTime="2008-11-15 03:31:10" leaveTime="2008-11-15 03:31:35" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33413470963" latitude="40.015395690491246" arriveTime="2008-11-15 03:31:55" leaveTime="2008-11-15 03:32:20" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33353165046" latitude="40.01643007692075" arriveTime="2008-11-15 03:33:45" leaveTime="2008-11-15 03:34:10" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33359208750501" latitude="40.01629813389625" arriveTime="2008-11-15 03:34:30" leaveTime="2008-11-15 03:34:55" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3333915481075" latitude="40.01679589140575" arriveTime="2008-11-15 03:35:45" leaveTime="2008-11-15 03:36:09" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33481690464667" latitude="40.01689856004" arriveTime="2008-11-15 03:36:29" leaveTime="2008-11-15 04:00:35" address="UNHANDLE">
+    <Path longitude="116.3344951072" latitude="40.016399533742"/>
+    <Path longitude="116.334276729788" latitude="40.016092490625"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33437098339999" latitude="40.0159656972895" arriveTime="2008-11-15 04:04:40" leaveTime="2008-11-15 04:05:05" address="UNHANDLE">
+    <Path longitude="116.33424791390385" latitude="40.01596524576046"/>
+    <Path longitude="116.33440804377771" latitude="40.01585683274631"/>
+    <Path longitude="116.33461299091" latitude="40.015461596471"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33460677004832" latitude="40.014870431392" arriveTime="2008-11-15 04:07:25" leaveTime="2008-11-15 04:08:10" address="UNHANDLE">
+    <Path longitude="116.33447326875749" latitude="40.0140364565255"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33442440759332" latitude="40.013450246628004" arriveTime="2008-11-15 04:08:35" leaveTime="2008-11-15 04:09:15" address="UNHANDLE"/>
+</Sequentiality>

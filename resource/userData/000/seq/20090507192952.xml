@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Sequentiality>
+  <KeyPoint longitude="116.33496588767598" latitude="40.0056364979708" arriveTime="2009-05-07 19:30:27" leaveTime="2009-05-07 19:31:52" address="UNHANDLE">
+    <Path longitude="116.33354437407166" latitude="40.006445040023"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.3336270622325" latitude="40.00750166922925" arriveTime="2009-05-07 19:32:27" leaveTime="2009-05-07 19:32:52" address="UNHANDLE">
+    <Path longitude="116.33381739373539" latitude="40.00928637741923"/>
+    <Path longitude="116.33396467005846" latitude="40.01174623529554"/>
+    <Path longitude="116.33224559800232" latitude="40.01265265968577"/>
+    <Path longitude="116.3316770781669" latitude="40.01434396484946"/>
+    <Path longitude="116.33202397543693" latitude="40.01656812477677"/>
+    <Path longitude="116.33025975460383" latitude="40.01703564576147"/>
+    <Path longitude="116.32787518886539" latitude="40.016810250762084"/>
+    <Path longitude="116.32737184273" latitude="40.0170523486125"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.32757296056" latitude="40.01725405789583" arriveTime="2009-05-07 19:40:42" leaveTime="2009-05-07 19:41:22" address="UNHANDLE">
+    <Path longitude="116.32755499390501" latitude="40.0173211325355"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.3275647509025" latitude="40.01731196697775" arriveTime="2009-05-07 19:41:32" leaveTime="2009-05-07 19:41:52" address="UNHANDLE"/>
+</Sequentiality>

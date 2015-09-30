@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Sequentiality>
+  <KeyPoint longitude="116.33976062515" latitude="40.00687708144783" arriveTime="2009-05-05 19:53:37" leaveTime="2009-05-05 19:54:22" address="UNHANDLE">
+    <Path longitude="116.33919385518332" latitude="40.00708122960733"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33838782638833" latitude="40.007168115839335" arriveTime="2009-05-05 19:54:42" leaveTime="2009-05-05 19:55:27" address="UNHANDLE">
+    <Path longitude="116.33787518720153" latitude="40.007836662485225"/>
+    <Path longitude="116.33772857974537" latitude="40.009592256886386"/>
+    <Path longitude="116.337487246004" latitude="40.0107378732856"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.3374705103525" latitude="40.01144896164625" arriveTime="2009-05-05 19:58:07" leaveTime="2009-05-05 19:58:32" address="UNHANDLE">
+    <Path longitude="116.33741720766845" latitude="40.01271457084408"/>
+    <Path longitude="116.3362745183669" latitude="40.01400025336531"/>
+    <Path longitude="116.33457658095917" latitude="40.01409290161033"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.3333148719475" latitude="40.01414698635" arriveTime="2009-05-05 20:01:47" leaveTime="2009-05-05 20:02:12" address="UNHANDLE">
+    <Path longitude="116.33266706256835" latitude="40.014156144210666"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33275213407249" latitude="40.0144978540605" arriveTime="2009-05-05 20:02:47" leaveTime="2009-05-05 20:03:12" address="UNHANDLE">
+    <Path longitude="116.332850183685" latitude="40.014679584233"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33274586121249" latitude="40.014921111899994" arriveTime="2009-05-05 20:03:27" leaveTime="2009-05-05 20:03:50" address="UNHANDLE">
+    <Path longitude="116.33302476531769" latitude="40.01518222394993"/>
+    <Path longitude="116.33323718199334" latitude="40.015441050157335"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33306721821751" latitude="40.01539435278525" arriveTime="2009-05-05 20:05:12" leaveTime="2009-05-05 20:05:37" address="UNHANDLE"/>
+</Sequentiality>

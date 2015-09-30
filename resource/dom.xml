@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <parent arr="arr0" lea="leave0" lat="lat0" addr="addr0">
+    <child lat="lat00" lon="lon00"/>
+    <child lat="lat01" lon="lon01"/>
+    <child lat="lat02" lon="lon02"/>
+    <child lat="lat03" lon="lon03"/>
+    <child lat="lat04" lon="lon04"/>
+  </parent>
+  <parent arr="arr1" lea="leave1" lat="lat1" addr="addr1">
+    <child lat="lat10" lon="lon10"/>
+    <child lat="lat11" lon="lon11"/>
+    <child lat="lat12" lon="lon12"/>
+    <child lat="lat13" lon="lon13"/>
+    <child lat="lat14" lon="lon14"/>
+  </parent>
+  <parent arr="arr2" lea="leave2" lat="lat2" addr="addr2">
+    <child lat="lat20" lon="lon20"/>
+    <child lat="lat21" lon="lon21"/>
+    <child lat="lat22" lon="lon22"/>
+    <child lat="lat23" lon="lon23"/>
+    <child lat="lat24" lon="lon24"/>
+  </parent>
+  <parent arr="arr3" lea="leave3" lat="lat3" addr="addr3">
+    <child lat="lat30" lon="lon30"/>
+    <child lat="lat31" lon="lon31"/>
+    <child lat="lat32" lon="lon32"/>
+    <child lat="lat33" lon="lon33"/>
+    <child lat="lat34" lon="lon34"/>
+  </parent>
+  <parent arr="arr4" lea="leave4" lat="lat4" addr="addr4">
+    <child lat="lat40" lon="lon40"/>
+    <child lat="lat41" lon="lon41"/>
+    <child lat="lat42" lon="lon42"/>
+    <child lat="lat43" lon="lon43"/>
+    <child lat="lat44" lon="lon44"/>
+  </parent>
+</root>

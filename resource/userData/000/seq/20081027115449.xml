@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Sequentiality>
+  <KeyPoint longitude="116.33891963837" latitude="40.002783085339" arriveTime="2008-10-27 11:57:24" leaveTime="2008-10-27 11:59:09" address="MISS">
+    <Path longitude="116.33821114196333" latitude="40.006396989289996"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33750468498" latitude="40.006551629101" arriveTime="2008-10-27 11:59:49" leaveTime="2008-10-27 12:03:59" address="MISS">
+    <Path longitude="116.33663262536" latitude="40.014190872625"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33641243788" latitude="40.014238183858" arriveTime="2008-10-27 12:04:09" leaveTime="2008-10-27 12:05:29" address="MISS"/>
+  <KeyPoint longitude="116.33941335727499" latitude="40.00156845783175" arriveTime="2008-10-27 11:55:09" leaveTime="2008-10-27 11:55:34" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3393090906125" latitude="40.002190438749" arriveTime="2008-10-27 11:56:24" leaveTime="2008-10-27 11:56:49" address="UNHANDLE"/>
+</Sequentiality>

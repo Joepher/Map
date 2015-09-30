@@ -1,7 +1,7 @@
 package com.mapfinger.task;
 
 import com.mapfinger.entity.UserData;
-import com.mapfinger.executor.ConvertToBDLocationExecutor;
+import com.mapfinger.executor.convert.ConvertToBDLocationExecutor;
 import com.mapfinger.service.DataParseService;
 
 public class DataConvertTask extends Task {

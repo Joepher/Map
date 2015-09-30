@@ -24,8 +24,6 @@ public class DataConvertTest {
 	}
 	
 	private static void testSuit() {
-		DataService service = DataConvertService.getInstance();
-		
 		String username = "000";
 		String[] files = getFiles(username);
 		List<UserData> list = new ArrayList<UserData>();
@@ -36,6 +34,7 @@ public class DataConvertTest {
 			list.add(new UserData(username, files[i]));
 		}
 		
+		DataService service = DataConvertService.getInstance();
 		service.fire(list);
 	}
 	

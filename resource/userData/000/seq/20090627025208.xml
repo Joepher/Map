@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Sequentiality>
+  <KeyPoint longitude="121.55329255602" latitude="31.297242989065" arriveTime="2009-06-27 03:05:58" leaveTime="2009-06-27 03:08:03" address="MISS">
+    <Path longitude="121.55798021577" latitude="31.295604897137"/>
+  </KeyPoint>
+  <KeyPoint longitude="121.55795070928" latitude="31.295615235193" arriveTime="2009-06-27 03:08:13" leaveTime="2009-06-27 03:12:53" address="MISS"/>
+  <KeyPoint longitude="121.55315112021" latitude="31.297082841586" arriveTime="2009-06-27 03:12:53" leaveTime="2009-06-27 03:16:08" address="MISS">
+    <Path longitude="121.55299905218601" latitude="31.2972937506554"/>
+    <Path longitude="121.55327262793536" latitude="31.297218140628072"/>
+    <Path longitude="121.55354128892073" latitude="31.29712805385679"/>
+    <Path longitude="121.55457912064921" latitude="31.296531200724612"/>
+    <Path longitude="121.5558631492854" latitude="31.295816279490378"/>
+    <Path longitude="121.55704284050923" latitude="31.29663784983715"/>
+    <Path longitude="121.55666661873845" latitude="31.29805032272877"/>
+    <Path longitude="121.55786117811616" latitude="31.299333616542075"/>
+    <Path longitude="121.55762853483847" latitude="31.300748851060998"/>
+    <Path longitude="121.55691870049" latitude="31.301097171373"/>
+  </KeyPoint>
+  <KeyPoint longitude="121.55679420152" latitude="31.301056150706" arriveTime="2009-06-27 03:26:38" leaveTime="2009-06-27 03:29:28" address="MISS"/>
+  <KeyPoint longitude="121.5575535202575" latitude="31.30084030785375" arriveTime="2009-06-27 02:52:33" leaveTime="2009-06-27 02:52:58" address="UNHANDLE"/>
+  <KeyPoint longitude="121.55807080661" latitude="31.29950889413675" arriveTime="2009-06-27 02:55:46" leaveTime="2009-06-27 02:56:03" address="UNHANDLE"/>
+  <KeyPoint longitude="121.55806410530124" latitude="31.2995004302915" arriveTime="2009-06-27 02:56:23" leaveTime="2009-06-27 02:57:21" address="UNHANDLE"/>
+  <KeyPoint longitude="121.55440828198002" latitude="31.296796256959002" arriveTime="2009-06-27 03:05:53" leaveTime="2009-06-27 03:12:53" address="UNHANDLE"/>
+</Sequentiality>

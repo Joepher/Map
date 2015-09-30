@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Sequentiality>
+  <KeyPoint longitude="116.33353364406" latitude="40.001828249975" arriveTime="2009-05-04 02:39:11" leaveTime="2009-05-04 03:16:53" address="MISS">
+    <Path longitude="116.33365764429584" latitude="40.00218017417999"/>
+    <Path longitude="116.33415804742077" latitude="40.00368213677253"/>
+    <Path longitude="116.3346633731023" latitude="40.005739178571076"/>
+    <Path longitude="116.33699515034769" latitude="40.00675216987985"/>
+    <Path longitude="116.34003454383856" latitude="40.006964968786"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.34022058173" latitude="40.006989062961" arriveTime="2009-05-04 03:22:14" leaveTime="2009-05-04 03:48:59" address="MISS">
+    <Path longitude="116.33989653396502" latitude="40.007480919532085"/>
+    <Path longitude="116.33856874152922" latitude="40.00943437956493"/>
+    <Path longitude="116.33721861547613" latitude="40.01146984424785"/>
+    <Path longitude="116.33583125589078" latitude="40.013611327100534"/>
+    <Path longitude="116.3331687391357" latitude="40.01454739044964"/>
+    <Path longitude="116.33241187745307" latitude="40.01482649040769"/>
+    <Path longitude="116.33213648246668" latitude="40.01493009171867"/>
+    <Path longitude="116.33192742815999" latitude="40.01492871847323"/>
+    <Path longitude="116.33146593021999" latitude="40.015025410144005"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33111750087" latitude="40.015090431647" arriveTime="2009-05-04 03:57:50" leaveTime="2009-05-04 03:59:20" address="MISS">
+    <Path longitude="116.33261867126855" latitude="40.01470817098357"/>
+    <Path longitude="116.33461260890537" latitude="40.01383228267638"/>
+    <Path longitude="116.33774138843923" latitude="40.01358428910238"/>
+    <Path longitude="116.3384928303023" latitude="40.013145825573474"/>
+    <Path longitude="116.33861128542846" latitude="40.0131181242673"/>
+    <Path longitude="116.33876442359201" latitude="40.0130426902809"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33851188017" latitude="40.013190019185" arriveTime="2009-05-04 04:05:35" leaveTime="2009-05-04 05:08:15" address="MISS">
+    <Path longitude="116.33864860273931" latitude="40.01323299736707"/>
+    <Path longitude="116.33745799967998" latitude="40.01360488061977"/>
+    <Path longitude="116.33487027178923" latitude="40.013698010334615"/>
+    <Path longitude="116.33372280693357" latitude="40.013911744318996"/>
+    <Path longitude="116.33363367901124" latitude="40.01397826179232"/>
+    <Path longitude="116.33364788364858" latitude="40.014000075394286"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33358971746" latitude="40.014099918745" arriveTime="2009-05-04 05:14:15" leaveTime="2009-05-04 05:18:45" address="MISS">
+    <Path longitude="116.33353840170693" latitude="40.014320832372"/>
+    <Path longitude="116.33251133031624" latitude="40.01462314926319"/>
+    <Path longitude="116.33249239609334" latitude="40.01477644325133"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33255871389" latitude="40.014848129451" arriveTime="2009-05-04 05:21:25" leaveTime="2009-05-04 08:12:32" address="MISS">
+    <Path longitude="116.33327517069847" latitude="40.01423174655808"/>
+    <Path longitude="116.33389257843926" latitude="40.01211093468723"/>
+    <Path longitude="116.33528883419922" latitude="40.010336286974386"/>
+    <Path longitude="116.33803904778921" latitude="40.00959233625315"/>
+    <Path longitude="116.33959978799231" latitude="40.00797218363607"/>
+    <Path longitude="116.34030561515334" latitude="40.00663696001439"/>
+    <Path longitude="116.34100493002543" latitude="40.00662554130545"/>
+    <Path longitude="116.34102949593249" latitude="40.00688185013675"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.34079846657" latitude="40.006932854729" arriveTime="2009-05-04 08:20:27" leaveTime="2009-05-04 09:53:07" address="MISS">
+    <Path longitude="116.3399403304831" latitude="40.00721881546215"/>
+    <Path longitude="116.33972576134155" latitude="40.00827350932247"/>
+    <Path longitude="116.33888428407307" latitude="40.00926013039592"/>
+    <Path longitude="116.33781246452848" latitude="40.01019357292424"/>
+    <Path longitude="116.33715648924387" latitude="40.01130034373008"/>
+    <Path longitude="116.33592772782002" latitude="40.01237725926546"/>
+    <Path longitude="116.33493273068" latitude="40.012666380081114"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33499546937" latitude="40.012821330232" arriveTime="2009-05-04 10:00:23" leaveTime="2009-05-04 10:13:27" address="MISS"/>
+  <KeyPoint longitude="116.3391344972575" latitude="40.00684838479475" arriveTime="2009-05-04 02:33:26" leaveTime="2009-05-04 02:33:51" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33722167596751" latitude="40.00686629831425" arriveTime="2009-05-04 02:34:11" leaveTime="2009-05-04 02:34:36" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33487852109833" latitude="40.004886845872335" arriveTime="2009-05-04 02:35:51" leaveTime="2009-05-04 02:36:36" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33428713701666" latitude="40.003518344977" arriveTime="2009-05-04 02:36:51" leaveTime="2009-05-04 02:37:36" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33348703919249" latitude="40.00193667196675" arriveTime="2009-05-04 02:38:16" leaveTime="2009-05-04 02:38:36" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33377932675499" latitude="40.002545167895754" arriveTime="2009-05-04 03:17:34" leaveTime="2009-05-04 03:17:59" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3397460078825" latitude="40.006919292919" arriveTime="2009-05-04 03:21:14" leaveTime="2009-05-04 03:21:39" address="UNHANDLE"/>
+  <KeyPoint longitude="116.34002828779376" latitude="40.007287833438" arriveTime="2009-05-04 03:22:07" leaveTime="2009-05-04 03:49:50" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33749147005831" latitude="40.01054635934983" arriveTime="2009-05-04 03:50:55" leaveTime="2009-05-04 03:51:40" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3370166824425" latitude="40.01283066869825" arriveTime="2009-05-04 03:51:55" leaveTime="2009-05-04 03:52:20" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33303394813998" latitude="40.014651251844164" arriveTime="2009-05-04 03:53:35" leaveTime="2009-05-04 03:54:15" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33251049803" latitude="40.01476519350625" arriveTime="2009-05-04 03:54:35" leaveTime="2009-05-04 03:55:00" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3321746022575" latitude="40.014928056446" arriveTime="2009-05-04 03:55:15" leaveTime="2009-05-04 03:55:40" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33246900146251" latitude="40.014791396850754" arriveTime="2009-05-04 03:59:40" leaveTime="2009-05-04 04:00:00" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3368375440325" latitude="40.0137732164505" arriveTime="2009-05-04 04:01:30" leaveTime="2009-05-04 04:01:55" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33831803752999" latitude="40.01326613744275" arriveTime="2009-05-04 04:02:20" leaveTime="2009-05-04 04:02:40" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3386332018625" latitude="40.01306789481124" arriveTime="2009-05-04 04:03:25" leaveTime="2009-05-04 04:03:50" address="UNHANDLE"/>
+  <KeyPoint longitude="116.338554133155" latitude="40.01317926404917" arriveTime="2009-05-04 04:05:20" leaveTime="2009-05-04 05:08:38" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33872125611501" latitude="40.0132286772985" arriveTime="2009-05-04 05:08:50" leaveTime="2009-05-04 05:09:15" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33713488204376" latitude="40.013636571273" arriveTime="2009-05-04 05:09:30" leaveTime="2009-05-04 05:10:35" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33363440636501" latitude="40.0139838806945" arriveTime="2009-05-04 05:13:35" leaveTime="2009-05-04 05:13:58" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33303297733335" latitude="40.0144606437405" arriveTime="2009-05-04 05:19:20" leaveTime="2009-05-04 05:20:05" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33251011338751" latitude="40.0146539436345" arriveTime="2009-05-04 05:20:20" leaveTime="2009-05-04 05:20:40" address="UNHANDLE"/>
+  <KeyPoint longitude="116.332461141935" latitude="40.0148236315215" arriveTime="2009-05-04 05:21:05" leaveTime="2009-05-04 08:12:32" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33324583554" latitude="40.014358444298495" arriveTime="2009-05-04 08:12:52" leaveTime="2009-05-04 08:13:17" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33731561976333" latitude="40.01003225050517" arriveTime="2009-05-04 08:15:37" leaveTime="2009-05-04 08:16:22" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3387432705475" latitude="40.00901773146425" arriveTime="2009-05-04 08:16:37" leaveTime="2009-05-04 08:17:02" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33981901694666" latitude="40.007524109508005" arriveTime="2009-05-04 08:17:17" leaveTime="2009-05-04 08:18:02" address="UNHANDLE"/>
+  <KeyPoint longitude="116.34031339319" latitude="40.006642169052" arriveTime="2009-05-04 08:18:32" leaveTime="2009-05-04 08:18:52" address="UNHANDLE"/>
+  <KeyPoint longitude="116.34103736187001" latitude="40.006660402169" arriveTime="2009-05-04 08:19:12" leaveTime="2009-05-04 08:20:07" address="UNHANDLE"/>
+  <KeyPoint longitude="116.33980278034666" latitude="40.00812712884866" arriveTime="2009-05-04 09:54:12" leaveTime="2009-05-04 09:54:57" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3373832043775" latitude="40.010547567664" arriveTime="2009-05-04 09:57:17" leaveTime="2009-05-04 09:57:42" address="UNHANDLE"/>
+  <KeyPoint longitude="116.3356079588675" latitude="40.01244438579263" arriveTime="2009-05-04 09:58:47" leaveTime="2009-05-04 09:59:52" address="UNHANDLE">
+    <Path longitude="116.33499546937" latitude="40.012821330232"/>
+    <Path longitude="116.33482936627831" latitude="40.012564472984"/>
+    <Path longitude="116.33585599257249" latitude="40.012340134693"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.33683049455001" latitude="40.01221590377525" arriveTime="2009-05-04 10:15:08" leaveTime="2009-05-04 10:15:33" address="UNHANDLE">
+    <Path longitude="116.33714563828153" latitude="40.0110203602137"/>
+    <Path longitude="116.33789822664201" latitude="40.00999178569639"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.3386785184925" latitude="40.00937600184525" arriveTime="2009-05-04 10:17:33" leaveTime="2009-05-04 10:17:58" address="UNHANDLE">
+    <Path longitude="116.3395729991623" latitude="40.008663124496394"/>
+    <Path longitude="116.33996396718454" latitude="40.0072430191231"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.34013667347" latitude="40.00695329520926" arriveTime="2009-05-04 10:20:03" leaveTime="2009-05-04 10:20:23" address="UNHANDLE">
+    <Path longitude="116.340139864015" latitude="40.006959717162005"/>
+  </KeyPoint>
+  <KeyPoint longitude="116.34016618553834" latitude="40.00704349882216" arriveTime="2009-05-04 10:20:33" leaveTime="2009-05-04 10:21:13" address="UNHANDLE"/>
+</Sequentiality>

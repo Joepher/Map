@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Sequentiality>
+  <KeyPoint longitude="116.33804055066" latitude="40.007588726157" arriveTime="2008-12-02 07:20:06" leaveTime="2008-12-02 10:51:29" address="MISS"/>
+  <KeyPoint longitude="116.33499730507" latitude="40.015265813246" arriveTime="2008-12-02 10:51:34" leaveTime="2008-12-02 16:11:28" address="MISS"/>
+  <KeyPoint longitude="116.33662588255498" latitude="40.00915852989225" arriveTime="2008-12-02 07:17:46" leaveTime="2008-12-02 07:18:11" address="UNHANDLE"/>
+</Sequentiality>

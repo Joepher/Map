@@ -2,9 +2,9 @@ package com.mapfinger.action;
 
 import java.util.List;
 import org.json.JSONArray;
-import com.mapfinger.entity.Coord;
-import com.mapfinger.executor.ConvertToJsonDataExecutor;
-import com.mapfinger.executor.LocationDataExtractExecutor;
+import com.mapfinger.entity.location.Coord;
+import com.mapfinger.executor.convert.ConvertToJsonDataExecutor;
+import com.mapfinger.executor.data.LocationDataExtractExecutor;
 
 public class ShowAction {
 	/* input param */
@@ -64,7 +64,7 @@ public class ShowAction {
 	
 	private boolean loginValidate() {
 		boolean result = false;
-		// TODO 验证用户名有效性 [nr]
+		// TODO 验证用户名有效性 [最后处理]
 		
 		return result;
 	}

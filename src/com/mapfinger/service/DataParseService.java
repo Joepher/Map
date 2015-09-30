@@ -2,68 +2,12 @@ package com.mapfinger.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import org.apache.logging.log4j.Logger;
 import com.mapfinger.entity.UserData;
 import com.mapfinger.log.FileLogger;
 import com.mapfinger.task.DataParseTask;
 
-public class DataParseService implements DataService {
-	private Object lock;
-	private Thread internalThread;
-	private List<UserData> dataQueue;
-	private ExecutorService pool;
-	private boolean noStopRequest;
-	private Logger logger;
-	
-	private static DataParseService service;
-	
-	private static final long WAIT_TIME_OUT = 5000; // ms
-	
-	public static DataService getInstance() {
-		if (service == null) {
-			service = new DataParseService();
-		}
-		
-		return service;
-	}
-	
-	@Override
-	public boolean fire(UserData userData) {
-		boolean response = false;
-		
-		logger.info("Handle new data: " + userData.toString());
-		
-		synchronized (lock) {
-			dataQueue.add(userData);
-			lock.notifyAll();
-		}
-		
-		response = true;
-		
-		return response;
-	}
-	
-	@Override
-	public boolean fire(List<UserData> list) {
-		boolean response = false;
-		
-		synchronized (lock) {
-			dataQueue.addAll(list);
-			lock.notifyAll();
-		}
-		
-		response = true;
-		
-		return response;
-	}
-	
-	@Override
-	public void stop() {
-		this.noStopRequest = false;
-	}
-	
+public class DataParseService extends DataService {
 	private DataParseService() {
 		this.logger = FileLogger.getLogger();
 		
@@ -85,7 +29,43 @@ public class DataParseService implements DataService {
 		this.internalThread.start();
 	}
 	
-	private void runWork() {
+	public static DataService getInstance() {
+		if (service == null) {
+			service = new DataParseService();
+		}
+		
+		return service;
+	}
+	
+	@Override
+	public boolean fire(UserData userData) {
+		logger.info("Handle new data: " + userData.toString());
+		
+		synchronized (lock) {
+			dataQueue.add(userData);
+			lock.notifyAll();
+		}
+		
+		return true;
+	}
+	
+	@Override
+	public boolean fire(List<UserData> list) {
+		synchronized (lock) {
+			dataQueue.addAll(list);
+			lock.notifyAll();
+		}
+		
+		return true;
+	}
+	
+	@Override
+	public void stop() {
+		this.noStopRequest = false;
+	}
+	
+	@Override
+	protected void runWork() {
 		logger.info("Start inner thread");
 		
 		boolean suspend = false;
@@ -105,7 +85,7 @@ public class DataParseService implements DataService {
 						lock.wait(WAIT_TIME_OUT);
 						
 						if (!suspend) {
-							logger.info("No data need to handle");
+							logger.info("No data avaliable to handle");
 							suspend = true;
 						}
 					} catch (InterruptedException e) {

@@ -1,7 +1,7 @@
 package com.mapfinger.task;
 
 import com.mapfinger.entity.UserData;
-import com.mapfinger.executor.KeyPointDetectionExecutor;
+import com.mapfinger.executor.keypoint.KeyPointDetectionExecutor;
 import com.mapfinger.service.DataAnalyzeService;
 
 public class DataParseTask extends Task {
@@ -11,7 +11,7 @@ public class DataParseTask extends Task {
 	
 	@Override
 	public void run() {
-		logger.info("Execute new DataParseTask: " + this.userData.toString());
+		logger.info("Execute new DataParseTask: " + userData.toString());
 		
 		KeyPointDetectionExecutor executor = new KeyPointDetectionExecutor(userData);
 		boolean response = executor.execute();
