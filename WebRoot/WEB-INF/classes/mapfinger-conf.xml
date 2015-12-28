@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapfinger>
+	<param-mapping>
+		<param key="distThreshold" value="100" />
+		<param key="timeThreshold" value="60" />
+		<param key="slopeRotateThreshold" value="1.0" />
+		<param key="slopeRotateRation" value="0.7" />
+		<param key="minPts" value="5" />
+		<param key="lofThreshold" value="2" />
+		<param key="R" value="6378.137" />
+	</param-mapping>
+
+	<path-mapping>
+		<path key="origen" value="wgs84/" />
+		<path key="convert" value="bd09ll/" />
+
+		<path key="key" value="key/" />
+		<path key="keycluster" value="keyclu/" />
+		<path key="sequentiality" value="seq/" />
+		<path key="pattern" value="pattern/" />
+
+		<path key="key-old" value="old/key/" />
+		<path key="keycluster-old" value="old/keyclu/" />
+		<path key="sequentiality-old" value="old/seq/" />
+		<path key="pattern-old" value="old/pattern/" />
+	</path-mapping>
+</mapfinger>

@@ -13,5 +13,20 @@
 			<result name="success">/WEB-INF/jsp/show.jsp</result>
 			<result name="fail">/WEB-INF/jsp/error.jsp</result>
 		</action>
+
+		<action name="map" class="com.mapfinger.action.MapShowAction">
+			<result name="success">/WEB-INF/jsp/map.jsp</result>
+			<result name="fail">/WEB-INF/jsp/error.jsp</result>
+		</action>
+
+		<action name="list" class="com.mapfinger.action.DataListAction">
+			<result name="success">/WEB-INF/jsp/list.jsp</result>
+			<result name="fail">/WEB-INF/jsp/error.jsp</result>
+		</action>
+
+		<action name="act" class="com.mapfinger.action.ActAction">
+			<result name="ok">/WEB-INF/jsp/act.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+		</action>
 	</package>
 </struts>    

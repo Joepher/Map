@@ -12,4 +12,6 @@ public abstract class BaseExecutor {
 	}
 	
 	public abstract boolean execute();
+	
+	protected void runwork() {};
 }

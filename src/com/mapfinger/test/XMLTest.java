@@ -14,7 +14,7 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
 public class XMLTest {
-	private static String path = "resource/dom.xml";
+	private static String path = "resources/mapfinger-conf.xml";
 	
 	static void write() throws Exception {
 		Document doc = DocumentHelper.createDocument();

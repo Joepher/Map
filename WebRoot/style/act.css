@@ -1,0 +1,16 @@
+html {
+	width: 720px;
+	height: 1088px;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#allmap {
+	width: 100%;
+	height: 100%;
+}

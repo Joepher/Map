@@ -6,7 +6,7 @@ function initCompoment() {
 }
 function initMap(point) {
 	var map = new BMap.Map("allmap"); // 创建地图实例
-	
+
 	if (point != null) {
 		map.centerAndZoom(point, 15);
 		map.addControl(new BMap.MapTypeControl()); // 添加地图类型控件
@@ -18,22 +18,23 @@ function initMap(point) {
 		map.setCurrentCity("北京"); // 设置地图显示的城市 此项是必须设置的
 		map.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
 	}
-	
+
 	return map;
 }
 function parse(array) {
+	map_showParamBlock();
 	initCompoment();
-	
+
 	var map;
-	
+
 	if (array != null) {
-		for ( var i = 0; i < array.length; i++) {
+		for (var i = 0; i < array.length; i++) {
 			var point = new BMap.Point(array[i].longitude, array[i].latitude);
-			
+
 			if (i == 0) {
 				map = initMap(point);
 			}
-			
+
 			addMarker(map, point);
 		}
 	} else {
@@ -45,18 +46,26 @@ function addMarker(map, point) {
 	var marker = new BMap.Marker(point);
 	map.addOverlay(marker);
 }
+function map_post() {
+	var lon, lat, param, uri = "map.action";
+	lon = document.getElementById("lon").value;
+	lat = document.getElementById("lat").value;
+	param = "longitude=" + lon + "&latitude=" + lat;
+	
+	sendAjaxRequest(uri, param);
+}
 function post() {
 	var type, begin, end, dt, tt, rt, param, uri = "show.action";
-	
+
 	var typeSelect = document.getElementById("type");
 	var curIndex = typeSelect.selectedIndex;
-	
+
 	type = typeSelect.options[curIndex].value;
-	
+
 	if (curIndex == 2) {// part
 		begin = document.getElementById("begin").value;
 		end = document.getElementById("end").value;
-		
+
 		if (begin < 0 || end <= 0 || (begin - end) > 0) {
 			var msg = "";
 			if (begin < 0) {
@@ -90,42 +99,40 @@ function post() {
 	} else {// default all
 		param = "type=" + type;
 	}
-	
+
 	sendAjaxRequest(uri, param);
 }
 function createHttpRequest() {
 	var httpRequest;
-	
+
 	if (window.XMLHttpRequest) {
 		httpRequest = new XMLHttpRequest();
 	} else {
 		if (window.ActiveXObject) {
 			try {
 				httpRequest = new ActiveXObject("Msxml12.XMLHTTP");
-			}
-			catch (e) {
+			} catch (e) {
 				try {
 					httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				catch (e) {
+				} catch (e) {
 					alert("浏览器不支持Ajax");
 				}
 			}
 		}
 	}
-	
+
 	return httpRequest;
 }
 function sendAjaxRequest(uri, param) {
 	var httpRequest = createHttpRequest();
-	
+
 	if (httpRequest != null) {
 		httpRequest.open("POST", uri, true);
 		httpRequest.setRequestHeader('Content-type',
 				'application/x-www-form-urlencoded');
 		httpRequest.setRequestHeader('User-Agent', 'XMLHTTP');
 		httpRequest.send(param);
-		
+
 		httpRequest.onreadystatechange = function() {
 			var responseText = httpRequest.responseText;
 			var begin = responseText.indexOf("onload");
@@ -144,7 +151,7 @@ function showParamBlock() {
 	var curIndex = document.getElementById("type").selectedIndex;
 	// type: default-all-part-key-skey-ikey-ekey
 	// param_block: part-key-skey-ikey-ekey
-	for ( var i = 0; i < 7; i++) {
+	for (var i = 0; i < 7; i++) {
 		if (i == 0 || i == 1) {
 			continue;
 		} else if (i == curIndex) {
@@ -153,4 +160,8 @@ function showParamBlock() {
 			param_block[i - 2].style.display = "none";
 		}
 	}
+}
+function map_showParamBlock(){
+	var param_block = document.getElementsByName("param_block");
+	param_block[0].style.display = "block";
 }
